@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/imageGalleryFragment">
+
+    <fragment
+        android:id="@+id/imageGalleryFragment"
+        android:name="com.myisolutions.imagegallery.ui.view.fragment.ImageGalleryFragment"
+        android:label="fragment_image_gallery"
+        tools:layout="@layout/fragment_image_gallery" >
+        <action
+            android:id="@+id/navigateToImageFragment"
+            app:destination="@id/imageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.myisolutions.imagegallery.ui.view.fragment.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" >
+        <action
+            android:id="@+id/navigateToImageGalleryFragment"
+            app:destination="@id/imageGalleryFragment" />
+        <argument
+            android:name="hit"
+            app:argType="com.myisolutions.imagegallery.data.model.PixaResponse$Hits" />
+    </fragment>
+</navigation>
